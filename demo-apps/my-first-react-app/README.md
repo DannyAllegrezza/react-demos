@@ -4,10 +4,28 @@
 
 React is a declarative JavaScript library for **building user interfaces**.
 
-React has a few different kind of components. 
+React has a few different kind of components.
 
 ### React.Component subclasses
 
+```javascript
+class ShoppingList extends React.Component {
+  render() {
+    return (
+      <div className="shopping-list">
+        <h1>Shopping List for {this.props.name}</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Oculus</li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+// Example usage: <ShoppingList name="Mark" />
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
