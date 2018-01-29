@@ -2,19 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// Renders a single button, with a value that is passed via a prop
 class Square extends React.Component {
     render() {
         return (
             <button className="square">
-            { }
+            {this.props.value}
             </button>
         );
     }
 }
 
+// Renders 9 squares to form our board
 class Board extends React.Component {
+
     renderSquare(i) {
-        return <Square />;
+        return <Square value={i}/>;
     }
 
     render() {
@@ -45,6 +48,7 @@ class Board extends React.Component {
     }
 }
 
+// Renders the board
 class Game extends React.Component {
     render() {
         return (
