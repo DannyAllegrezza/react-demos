@@ -1,0 +1,9 @@
+{
+  "name": "advanced-react",
+  "version": "1.0.0",
+  "description": "Advanced React training",
+  "main": "lib/server.js",
+  "repository": "https://github.com/DannyAllegrezza/Notes",
+  "author": "Danny Allegrezza",
+  "license": "MIT"
+}
