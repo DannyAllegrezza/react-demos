@@ -95,5 +95,6 @@ const HelloWorld = (props) => {
 * Doesn't know about Redux
 * Typically funtional components (smaller, light weight, does not need any state so no need to use a React class component)
 
-
-
+> "When you notice that some components don't use props they receive but merely forward them down... it's a good time to introduce some container components."
+> 
+> Dan Abramov
