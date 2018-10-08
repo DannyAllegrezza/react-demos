@@ -41,7 +41,45 @@ ESLint
 
 How many ways are there to create React components?!
 
-`Container` vs `Presentation` components
+#### 1. ES5 Create Class Component
+
+```javascript
+var HelloWorld = React.createClass({
+	render: function () {
+		return (
+			<h1>Hello world!</h1>
+		)
+	}
+});
+```
+
+#### 2. ES6 Create Class Component
+
+* No autobind! Most people bind `this` in the constructor
+* PropTypes are declared separately
+* Default props declared separately 
+* Set initial state in the constructor
+
+#### 3. ES5 Stateless Functional Component
+
+```javascript
+var HelloWorld = function(props) {
+	return ( //  this is the render function
+		<h1>Hello World</h1>
+	);
+};
+```
+#### 4. ES6 Stateless Component
+
+```javascript
+const HelloWorld = (props) => {
+	return (
+		<h1>Hello World!</h1>
+	);
+});
+```
+
+## `Container` vs `Presentation` components
 
 #### `Container` components
 
