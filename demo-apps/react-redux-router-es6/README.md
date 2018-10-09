@@ -10,6 +10,16 @@ A CRUD web app based around automotive racing events.
 
 ## Why Redux?
 
+Do I need it?
+
+`simple < ------------------------------------------------ > complex`
+
+* Complex data flows
+* Inter-component communication
+* Non-heirarchical data
+* Many actions
+* Same data used in multiple places
+
 ## Development Environment Goals
 
 * Automated testing
