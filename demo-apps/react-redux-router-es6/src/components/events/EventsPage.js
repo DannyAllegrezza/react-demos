@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as driftEventActions from '../../actions/driftEventActions';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class EventsPage extends Component {
@@ -25,7 +26,7 @@ class EventsPage extends Component {
 
 	onClickSave() {
 		// dispatch - cleaner way.
-		this.props.createDriftEvent(this.state.driftEvent);
+		this.props.actions.createDriftEvent(this.state.driftEvent);
 	}
 
 	driftEventsRow(driftEvent, index) {
@@ -53,12 +54,12 @@ function mapStateToProps(state, ownProps) {
 // What actions are available in our Component?
 function mapDispatchToProps(dispatch) {
 	return {
-		createDriftEvent: driftEvent => dispatch(driftEventActions.createDriftEvent(driftEvent))
+		actions: bindActionCreators(driftEventActions, dispatch)
 	};
 }
 
 EventsPage.propTypes = {
-	driftEvents: PropTypes.array.isRequired,
+	actions: PropTypes.array.isRequired,
 	createDriftEvent: PropTypes.func.isRequired,
 };
 
