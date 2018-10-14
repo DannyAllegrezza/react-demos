@@ -6,7 +6,6 @@ import HomePage from './home/HomePage';
 import EventsPage from './events/EventsPage';
 import AboutPage from './about/AboutPage';
 import Header from './common/Header';
-// import ManageCoursePage from './course/ManageCoursePage'; //eslint-disable-line import/no-named-as-default
 import { connect } from 'react-redux';
 
 class App extends React.Component {
@@ -20,10 +19,6 @@ class App extends React.Component {
 				<Route exact path="/" component={HomePage} />
 				<Route path="/about" component={AboutPage} />
 				<Route path="/events" component={EventsPage} />
-
-				{/* <Route path="/courses" component={CoursesPage} />
-				<Route path="/course/:id" component={ManageCoursePage} />
-				<Route path="/course" component={ManageCoursePage} exact /> */}
 			</div>
 		);
 	}

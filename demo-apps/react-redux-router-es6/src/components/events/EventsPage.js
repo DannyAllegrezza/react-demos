@@ -24,8 +24,8 @@ class EventsPage extends Component {
 	}
 
 	onClickSave() {
-		// dispatch our action
-		this.props.dispatch(driftEventActions.createDriftEvent(this.state.driftEvent));
+		// dispatch - cleaner way.
+		this.props.createDriftEvent(this.state.driftEvent);
 	}
 
 	driftEventsRow(driftEvent, index) {
@@ -50,12 +50,19 @@ function mapStateToProps(state, ownProps) {
 	};
 }
 
+// What actions are available in our Component?
+function mapDispatchToProps(dispatch) {
+	return {
+		createDriftEvent: driftEvent => dispatch(driftEventActions.createDriftEvent(driftEvent))
+	};
+}
+
 EventsPage.propTypes = {
-	dispatch: PropTypes.func.isRequired,
-	driftEvents: PropTypes.array.isRequired
+	driftEvents: PropTypes.array.isRequired,
+	createDriftEvent: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(EventsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(EventsPage);
 
 /**
  * Lets talk about exports
