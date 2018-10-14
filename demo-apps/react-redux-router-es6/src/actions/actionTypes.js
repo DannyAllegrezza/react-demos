@@ -1,0 +1,1 @@
+export const CREATE_DRIFT_EVENT = 'CREATE_DRIFT_EVENT';

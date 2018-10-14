@@ -6,7 +6,6 @@ import HomePage from './home/HomePage';
 import EventsPage from './events/EventsPage';
 import AboutPage from './about/AboutPage';
 import Header from './common/Header';
-// import CoursesPage from './course/CoursesPage';
 // import ManageCoursePage from './course/ManageCoursePage'; //eslint-disable-line import/no-named-as-default
 import { connect } from 'react-redux';
 
@@ -31,7 +30,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-	loading: PropTypes.bool.isRequired,
+	//loading: PropTypes.bool.isRequired,
 	match: PropTypes.object.isRequired
 };
 
