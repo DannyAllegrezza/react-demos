@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as driftEventActions from '../../actions/driftEventActions';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'C:/Users/danny/AppData/Local/Microsoft/TypeScript/3.0/node_modules/redux';
 
 class EventsPage extends Component {
 	constructor(props, context) {
@@ -59,8 +59,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 EventsPage.propTypes = {
-	actions: PropTypes.array.isRequired,
-	createDriftEvent: PropTypes.func.isRequired,
+	driftEvents: PropTypes.array.isRequired,
+	actions: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventsPage);
