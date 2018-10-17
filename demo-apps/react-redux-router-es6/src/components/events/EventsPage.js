@@ -12,11 +12,12 @@ class EventsPage extends Component {
 			driftEvent: { name: "" }
 		};
 
-		// We need to properly bind the `this` of the EventsPage component
+		// 1. We need to properly bind the `this` of the EventsPage component
 		this.onEventNameChange = this.onEventNameChange.bind(this);
 		this.onClickSave = this.onClickSave.bind(this);
 	}
 
+	// 2. Child functions -- called by render()
 	onEventNameChange(event) {
 		const driftEvent = this.state.driftEvent;
 		// update the events name
@@ -32,6 +33,9 @@ class EventsPage extends Component {
 	driftEventsRow(driftEvent, index) {
 		return (<div key={index}>{driftEvent.name}</div>);
 	}
+
+	// 3. Render function where we typically are calling a child component
+	// Ideally, we just call a child component that contains the markup
 	render() {
 		return (
 			<div>
@@ -45,6 +49,13 @@ class EventsPage extends Component {
 	}
 }
 
+// 4. Proptypes
+EventsPage.propTypes = {
+	driftEvents: PropTypes.array.isRequired,
+	actions: PropTypes.object.isRequired,
+};
+
+// 5. Redux connect and related functions
 function mapStateToProps(state, ownProps) {
 	return {
 		driftEvents: state.driftEvents
@@ -57,11 +68,6 @@ function mapDispatchToProps(dispatch) {
 		actions: bindActionCreators(driftEventActions, dispatch)
 	};
 }
-
-EventsPage.propTypes = {
-	driftEvents: PropTypes.array.isRequired,
-	actions: PropTypes.object.isRequired,
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventsPage);
 
